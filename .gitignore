@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+dist/
+build/
+*.egg
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# uv
+# (uv.lock IS committed — it pins the dependency graph)
+
+# Test / tooling caches
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Secrets and local config — never commit these
+secrets.env
+config.toml
+*.db
+*.db-shm
+*.db-wal
+
+# Editor / OS / local tooling
+.DS_Store
+.idea/
+*.swp
+.claude/
+
+# Node (linuswise-desktop)
+node_modules/
+
+# Tauri build output (linuswise-desktop)
+linuswise-desktop/src-tauri/target/
+linuswise-desktop/src-tauri/gen/

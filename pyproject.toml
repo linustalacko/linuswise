@@ -1,0 +1,65 @@
+[project]
+name = "linuswise"
+version = "0.1.0"
+description = "A tiny self-hosted Readwise: Kindle + PDF highlights, spaced-repetition daily email."
+readme = "README.md"
+requires-python = ">=3.12"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Linus Talacko" }]
+keywords = ["readwise", "kindle", "highlights", "spaced-repetition", "pdf", "self-hosted"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: End Users/Desktop",
+    "Operating System :: MacOS",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Text Processing",
+]
+dependencies = [
+    # Floors raised to versions that include known security/parse fixes:
+    #   pymupdf (untrusted PDF parsing), jinja2 (sandbox CVEs), flask (3.1.x).
+    "pymupdf>=1.27",
+    "jinja2>=3.1.6",
+    "flask>=3.1.1",
+    "groq>=1.0",
+    "model2vec>=0.8",
+    "numpy>=2.0",
+]
+
+[project.optional-dependencies]
+# Native desktop window. Optional so a failed pyobjc build never breaks core.
+desktop = ["pywebview>=5"]
+
+[project.urls]
+Homepage = "https://github.com/linustalacko/linuswise"
+Repository = "https://github.com/linustalacko/linuswise"
+Issues = "https://github.com/linustalacko/linuswise/issues"
+
+[project.scripts]
+linuswise = "linuswise.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["linuswise"]
+
+[dependency-groups]
+dev = ["pytest>=8", "ruff>=0.6"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+# pycodestyle (E), pyflakes (F), isort (I), bugbear (B), pyupgrade (UP),
+# comprehensions (C4). Security scanning is handled by pip-audit in CI.
+select = ["E", "F", "I", "B", "UP", "C4"]
+# E501 (line length) is enforced by the formatter, not the linter.
+ignore = ["E501"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

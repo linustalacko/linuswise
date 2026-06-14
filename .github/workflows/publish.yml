@@ -1,0 +1,40 @@
+name: Publish to PyPI
+
+# Push a version tag to build and publish to PyPI:
+#   git tag v0.1.0 && git push origin v0.1.0
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  build:
+    name: Build distributions
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - run: uv build
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist/
+
+  publish:
+    name: Publish to PyPI
+    needs: build
+    runs-on: ubuntu-latest
+    # One-time setup required before this works:
+    #   1. Register "linuswise" as a Trusted Publisher on PyPI for this repo +
+    #      workflow + environment — https://docs.pypi.org/trusted-publishers/
+    #   2. Create a "pypi" environment in repo Settings → Environments.
+    # No long-lived API token is stored; PyPI mints a short-lived one via OIDC.
+    environment: pypi
+    permissions:
+      id-token: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist/
+      - uses: pypa/gh-action-pypi-publish@release/v1

@@ -1,0 +1,34 @@
+# Copy to ~/.config/linuswise/config.toml (or ./config.toml) and edit.
+# Anything you omit uses the built-in default.
+
+# db_path     = "~/.local/share/linuswise/linuswise.db"
+# inbox_dir   = "~/linuswise-inbox"          # drop highlighted PDFs here
+# archive_dir = "~/linuswise-inbox/_ingested"
+# review_count = 5                          # highlights per daily email
+# min_highlight_chars = 20                  # skip trivially short snippets
+# web_port = 8765                           # the desktop/web UI
+
+[email]
+# method = "smtp" actually emails you; "file" writes the HTML and opens it.
+method    = "smtp"
+sender    = "you@example.com"
+recipient = "you@example.com"
+subject   = "Your Daily Linuswise"
+
+# Gmail / Google Workspace: create an App Password at
+# https://myaccount.google.com/apppasswords and put it in the
+# LINUSWISE_SMTP_PASSWORD env var (preferred) or smtp_password below.
+smtp_host     = "smtp.gmail.com"
+smtp_port     = 587
+smtp_username = "you@example.com"
+smtp_starttls = true
+# smtp_password = "xxxx xxxx xxxx xxxx"     # better: use the env var
+
+[qa]
+# Ask questions about your highlights. Embeddings are always computed locally;
+# only the retrieved snippets are sent to Groq to write the answer.
+# Get a free key at https://console.groq.com/keys → GROQ_API_KEY env var, or:
+# groq_api_key = "gsk_..."
+groq_model = "llama-3.3-70b-versatile"
+embed_model = "minishlab/potion-base-8M"
+retrieve_k = 10

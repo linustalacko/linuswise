@@ -1,0 +1,6 @@
+# Free-form issues are allowed — the templates are just a convenience.
+blank_issues_enabled: true
+contact_links:
+  - name: Security vulnerability
+    url: https://github.com/linustalacko/linuswise/security/advisories/new
+    about: Please report security issues privately, not as public issues.

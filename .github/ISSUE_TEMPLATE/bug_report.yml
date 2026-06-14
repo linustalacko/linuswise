@@ -1,0 +1,32 @@
+name: Bug report
+description: Something isn't working as expected
+labels: ["bug"]
+body:
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: What did you run, what did you expect, and what happened instead?
+    validations:
+      required: true
+  - type: dropdown
+    id: command
+    attributes:
+      label: Which part?
+      options:
+        - import-readwise
+        - ingest-kindle
+        - ingest-pdf
+        - daily / email
+        - app / serve (review UI)
+        - ask
+        - other
+    validations:
+      required: false
+  - type: textarea
+    id: extra
+    attributes:
+      label: Logs / context
+      description: Paste relevant output. Don't include API keys, app passwords, or personal highlights.
+    validations:
+      required: false
