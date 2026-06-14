@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640">
+  <rect width="1280" height="640" fill="#ffffff"/>
+  <rect x="0" y="0" width="1280" height="10" fill="#111111"/>
+  <g font-family="Helvetica Neue, Helvetica, Arial, sans-serif">
+    <text x="96" y="248" font-size="94" font-weight="700" fill="#111111" letter-spacing="-3">Linuswise</text>
+    <text x="100" y="308" font-size="30" font-weight="500" fill="#555555">A tiny, self-hosted Readwise.</text>
+    <text x="100" y="350" font-size="21" font-weight="400" fill="#8a8a8a">Kindle · PDF · highlights · spaced-repetition daily email</text>
+    <text x="100" y="552" font-size="23" font-weight="500" fill="#b3b3b3">github.com/linustalacko/linuswise</text>
+  </g>
+  <g transform="translate(770,182)">
+    <rect x="9" y="13" width="418" height="262" rx="14" fill="#000000" opacity="0.05"/>
+    <rect x="0" y="0" width="418" height="262" rx="14" fill="#ffffff" stroke="#ededed" stroke-width="2"/>
+    <rect x="34" y="40" width="4" height="150" fill="#111111"/>
+    <g font-family="Georgia, Times New Roman, serif" font-size="22" fill="#222222">
+      <text x="58" y="66">The things you read don't</text>
+      <rect x="56" y="80" width="304" height="30" fill="#fff2a0"/>
+      <text x="58" y="102">stick unless you meet them</text>
+      <rect x="56" y="112" width="156" height="30" fill="#fff2a0"/>
+      <text x="58" y="134">again, and again.</text>
+      <text x="58" y="178" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="15" fill="#9a9a9a">— from your library</text>
+    </g>
+    <line x1="34" y1="206" x2="384" y2="206" stroke="#f0f0f0" stroke-width="2"/>
+    <g font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="15" font-weight="600">
+      <text x="34" y="240" fill="#111111">★ Keep</text>
+      <text x="120" y="240" fill="#9a9a9a">Skip</text>
+      <text x="186" y="240" fill="#9a9a9a">↶ Rewind</text>
+    </g>
+  </g>
+</svg>
