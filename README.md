@@ -41,6 +41,10 @@ storage. Every pixel of UI is on a 4px grid.
 
 Requires [uv](https://github.com/astral-sh/uv) and Python 3.12+.
 
+**Quickest way to try it** (no clone needed, just [uv](https://github.com/astral-sh/uv)): `uvx --from git+https://github.com/linustalacko/linuswise linuswise --help`
+
+Or install it from source:
+
 ```bash
 git clone https://github.com/linustalacko/linuswise.git
 cd linuswise
