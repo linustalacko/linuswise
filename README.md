@@ -143,3 +143,38 @@ and feature requests go in
 
 > Not affiliated with or endorsed by Readwise. "Readwise" and "Kindle" are
 > trademarks of their respective owners; Linuswise simply reads their exports.
+
+
+## linuswise vs Readwise
+
+linuswise is a self-hosted, open-source **alternative to Readwise** for people who want to own their highlights locally instead of paying a subscription. An honest comparison:
+
+| | linuswise | Readwise |
+| --- | --- | --- |
+| License | MIT, open source | Proprietary |
+| Price | Free (self-hosted) | Paid subscription |
+| Where your data lives | Local SQLite on your Mac | Readwise cloud |
+| Kindle highlights | Pulled off the device (`My Clippings.txt`) — catches side-loaded PDFs & personal docs | Cloud sync (misses side-loaded/personal docs) |
+| PDF highlights | Ingests annotated PDFs from a folder | Supported |
+| Import existing Readwise library | Yes — CSV export | n/a |
+| Daily review | Spaced-repetition daily email | Daily email / app |
+| Search | Local semantic "ask your library" (embeddings local; snippets to Groq, or local Ollama) | Cloud search / AI |
+| Account required | No | Yes |
+| Apps | Local review app (macOS) | iOS, Android, web |
+| Setup | Command line (`uv`); macOS-centric | Polished, zero-setup |
+
+**Choose linuswise** if you want to own your highlights in a local file with no subscription and no cloud, and you're comfortable with a little command-line setup on a Mac.
+
+**Stick with Readwise** if you want a polished, cross-device, zero-setup product with mobile apps and official integrations.
+
+## FAQ
+
+**Is this affiliated with Readwise?** No — linuswise is an independent, open-source tool that reads your own exports. "Readwise" and "Kindle" are trademarks of their owners.
+
+**Does my data leave my machine?** Only the optional "ask your library" feature, and only the few retrieved snippets, are sent to Groq to write an answer — embeddings are computed locally. Point it at a local Ollama for zero data leaving your Mac. Everything else is local SQLite.
+
+**Why read `My Clippings.txt` instead of Amazon's export?** Amazon's cloud export omits side-loaded PDFs and personal documents; reading the device file captures everything you've highlighted.
+
+**Is it free?** Yes — MIT-licensed and free to self-host.
+
+**Does it run on Windows or Linux?** It's macOS-centric today (Kindle mounting, launchd scheduling). The core is Python, so other platforms may partly work but aren't supported yet.
